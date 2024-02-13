@@ -1,10 +1,5 @@
 import pandas as pd
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.preprocessing import StandardScaler
 import streamlit as st
-from lightgbm import LGBMRegressor
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import PoissonRegressor
 import pickle
 import webbrowser
 import joblib
