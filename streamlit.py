@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 import pickle
 import webbrowser
-import joblib
 #background_image_url = "C:\\Users\\janani.u.lv\\Downloads\\hos_bg.jpg"
 #background_image_url = "https://urocoach.com//wp-content//uploads//2019//04//iStock-596098068.jpg"
 #background_image_url = "https://st4.depositphotos.com//1008011//25427//i//450//depositphotos_254274782-stock-photo-medical-cosmetology-clinic-theme-blur.jpg"
@@ -69,16 +68,13 @@ def main():
     with colu1:
         st.write('')
     with colu2:
-        if st.button('**Predict Length of Stay**'):
+        c=st.button('**Predict Length of Stay**')
+    if c:
         #features = np.array([[num_callouts,num_diagnosis,num_procs,num_input,num_rx,num_transfers,injury,blood,digestive,genitourinary,skin,respiratory,infectious]])  # Add more features as required
-        # prediction = pr.predict(input_df)[0]
-        # prediction = round(prediction)
-            prediction=predict_length_of_stay(input_df)[0]
-            prediction=round(prediction)
-    with colu3:
-        st.write('')
-    st.write(input_df)
-    st.markdown("<h2 style='text-align: center;'>Predicted Length of Stay: <b>{}</b> days</h3>".format(prediction), unsafe_allow_html=True)
+        prediction=predict_length_of_stay(input_df)[0]
+        prediction=round(prediction)
+        st.markdown("<h2 style='text-align: center;'>Predicted Length of Stay: <b>{}</b> days</h3>".format(prediction), unsafe_allow_html=True)
+        st.write(input_df)
         
 if __name__ == '__main__':
     main()
