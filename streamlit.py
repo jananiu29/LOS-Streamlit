@@ -16,7 +16,7 @@ background_style = f"""
     </style>
 """
 st.markdown(background_style, unsafe_allow_html=True)
-model = pickle.load(open('los2.pkl','rb'))
+model = pickle.load(open('los_lg.pkl','rb'))
 def predict_length_of_stay(input_df):
     prediction = model.predict(input_df)
     return prediction
